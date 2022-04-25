@@ -18,7 +18,7 @@
      $content .= '<label for="email">Email</label>';
      $content .= '<input type="text" name="email" placeholder="Email">';
 
-     $content .= '<label for="message">You message</label>';
+     $content .= '<label for="message">Your message</label>';
      $content .= '<textarea type="text" name="message" placeholder="Message"></textarea>';
 
      $content .= '<input type="submit" name="submit_button" value="Submit!">';
