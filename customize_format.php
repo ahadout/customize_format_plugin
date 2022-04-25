@@ -13,7 +13,7 @@
      $content .= '<form method="post" action="http://localhost/solicode/wordpress/thank-you/">';
 
      $content .= '<label for="your_name">Name</label>';
-     $content .= '<input type="text" name="your_name" placeholder="name">';
+     $content .= '<input type="text" name="name" placeholder="name">';
      
      $content .= '<label for="email">Email</label>';
      $content .= '<input type="text" name="email" placeholder="Email">';
@@ -28,21 +28,21 @@
  }
  add_shortcode('customize_format','customize_format');
 
- function form_capture(){
-     if(isset($_POST['submit_button'])){
-         $name = sanitize_text_field($_POST['your_name']);
-         $email = sanitize_text_field($_POST['email']);
-         $send = sanitize_textarea_field($_POST['message']);
+//  function form_capture(){
+//      if(isset($_POST['submit_button'])){
+//          $email = sanitize_text_field($_POST['email']);
+//          $send = sanitize_textarea_field($_POST['message']);
+//          $name = sanitize_text_field($_POST['name']);
 
-         $to = 'ahadout.mohamed.solicode@gmail.com';
-         $subject = 'test submit';
-         $message = $name . ' - ' . $email . ' - ' . $send;
+//          $to = 'ahadout.mohamed.solicode@gmail.com';
+//          $subject = 'test submit';
+//          $message = $name . ' - ' . $email . ' - ' . $send;
 
-         wp_mail($to,$subject,$message);
-     }
- }
+//          wp_mail($to,$subject,$message);
+//      }
+//  }
 
-add_action('wp_head','form_capture');
+// add_action('wp_head','form_capture');
 
     add_action( 'admin_menu', 'wporg_options_page' );
     function wporg_options_page() {
