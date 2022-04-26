@@ -32,11 +32,23 @@ if(isset($_POST['submit_button'])) {
         array('option_name' => 'message','option_value' =>$_POST['message'])
     );
     $table_name = 'wp_options';
-    for($i=0; $i<count($data); $i++){
-        // $where = $data[$i]['option_name'];
-        // $result = $wpdb->insert($table_name,$data[$i]);
-        $result = $wpdb->update($table_name,$data[$i],array('option_name' => $data[$i]['option_name']));
+    // get data from database
+    $where = $data[0]['option_name'];
+    $sql = "SELECT option_name From {$table_name} WHERE option_name = '{$where}'";
+    $get = $wpdb->get_results($sql);
+    // .
+    if($get){
+        for($i=0; $i<count($data); $i++){
+            // $result = $wpdb->insert($table_name,$data[$i]);
+            $result = $wpdb->update($table_name,$data[$i],array('option_name' => $data[$i]['option_name']));
+        }
     }
+    else{
+        for($i=0; $i<count($data); $i++){
+            $result = $wpdb->insert($table_name,$data[$i]);
+        }
+    }
+    
 
     if($result==1){
         echo"<script>alert('data added');</script>";
