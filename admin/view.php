@@ -33,15 +33,16 @@ if(isset($_POST['submit_button'])) {
     );
     $table_name = 'wp_options';
     for($i=0; $i<count($data); $i++){
-        $result = $wpdb->insert($table_name,$data[$i]);
+        // $where = $data[$i]['option_name'];
+        // $result = $wpdb->insert($table_name,$data[$i]);
+        $result = $wpdb->update($table_name,$data[$i],array('option_name' => $data[$i]['option_name']));
     }
 
     if($result==1){
         echo"<script>alert('data added');</script>";
 
-    }else
-    echo"<script>alert('unable to add');</script>";    
+    }
+    else{
+        echo"<script>alert('unable to add');</script>";
+    }
 }
-
-
-
