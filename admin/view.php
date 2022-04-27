@@ -52,7 +52,6 @@ if(isset($_POST['submit_button'])) {
 
     if($result==1){
         echo"<script>alert('data added');</script>";
-
     }
     else{
         echo"<script>alert('unable to add');</script>";
