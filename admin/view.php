@@ -1,21 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
+    <title>Document</title>
+</head>
+<body>
 <?php
-
-$content = '<h1 style="text-align: center; color: red;">Welcom to customize_format plugin</h1><br>';
+$content = '<style>h1{
+    font-family: "Quicksand", sans-serif;
+}</style>';
+$content .= '<h1 style="text-align: center; color: black;font-family: "Qicksand", sans-serif;">Welcom to customize format plugin</h1><br>';
 
 $content .= '<form method="post">';
 
 // $content .= '<label>First & Last name</label><input name="test" type="radio" value="test"><br>';
-$content .= '<label>Full name</label><input name="full_name" value="enable" type="radio"><input name="full_name" type="radio"value="disable"><br>';
+$content .= '<label>Full name</label>  ::enable<input name="full_name" value="enable"  type="radio"><input name="full_name" type="radio"value="disable">disable<br>';
 
-$content .= '<label>Email</label><input name="email"value="enable" type="radio"><input name="email" value="disable"type="radio"><br>';
+$content .= '<label>Email</label> ::enable<input name="email"value="enable" type="radio"><input name="email" value="disable"type="radio">disable<br>';
 
-$content .= '<label>Phone N°</label><input name="phone" type="radio" value="enable"><input name="phone" type="radio" value="disable"><br>';
+$content .= '<label>Phone N°</label> ::enable<input name="phone" type="radio" value="enable"><input name="phone" type="radio" value="disable">disable<br>';
 
-$content .= '<label>Adress</label><input name="adress" type="radio" value="enable"><input name="adress" type="radio" value="disable"><br>';
+$content .= '<label>Adress</label> ::enable<input name="adress" type="radio" value="enable"><input name="adress" type="radio" value="disable">disable<br>';
 
-$content .= '<label>Subject</label><input name="subject" type="radio" value="enable"><input name="subject" type="radio" value="disable"><br>';
+$content .= '<label>Subject</label> ::enable<input name="subject" type="radio" value="enable"><input name="subject" type="radio" value="disable">disable<br>';
 
-$content .= '<label>Message</label><input name="message" type="radio" value="enable"><input name="message" type="radio" value="disable"><br>';
+$content .= '<label>Message</label> ::enable<input name="message" type="radio" value="enable"><input name="message" type="radio" value="disable">disable<br>';
 
 $content .= '<input type="submit" name="submit_button" value="Submit!">';
 
@@ -57,3 +72,6 @@ if(isset($_POST['submit_button'])) {
         echo"<script>alert('unable to add');</script>";
     }
 }
+?>
+</body>
+</html>
